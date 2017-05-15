@@ -1,4 +1,12 @@
 # -*- coding:utf-8 -*-
+#
+# warning:
+# this is a demo http service, think twice before applying in production environment
+# author:
+# CornSoiliml
+# 346415320@qq.com
+# have fun
+
 import tornado.httpserver
 import tornado.ioloop
 import tornado.options
