@@ -36,7 +36,7 @@ class DelPortforwardHandler(tornado.web.RequestHandler):
         router_gwip = output.strip()
         reg = '^((25[0-5]|2[0-4]\\d|[01]?\\d\\d?)($|(?!\\.$)\\.)){4}$'
         if not re.match(reg,router_gwip):
-            msg = {'code':409,'msg':'no router matched by uuid'}
+            msg = {'code':404,'msg':'no router matched by uuid'}
         else:
             cf = ConfigParser.ConfigParser()
             try:
@@ -53,7 +53,7 @@ class DelPortforwardHandler(tornado.web.RequestHandler):
             res_output = str(output)
             if not res_status =='0':
                 logging.info(res_output)
-                msg = {'code':410,'msg':res_output}
+                msg = {'code':500,'msg':res_output}
             else:
                 msg = {'code':200,'msg':'del portforward rule success'}
         msg_js = json.dumps(msg,indent=4)
@@ -74,7 +74,7 @@ class AddPortforwardHandler(tornado.web.RequestHandler):
         logging.info(output)
         reg = '^((25[0-5]|2[0-4]\\d|[01]?\\d\\d?)($|(?!\\.$)\\.)){4}$'
         if not re.match(reg,router_gwip):
-            msg = {'code':409,'msg':'no router matched by uuid'}
+            msg = {'code':404,'msg':'no router matched by uuid'}
         else:
             cf = ConfigParser.ConfigParser()
             try:
@@ -99,7 +99,7 @@ class AddPortforwardHandler(tornado.web.RequestHandler):
             res_output = str(output)
             if not res_status =='0':
                 logging.info(res_output)
-                msg = {'code':410,'msg':res_output}
+                msg = {'code':500,'msg':res_output}
             else:
                 msg = {'code':200,'msg':'add portforward rule success'}
         msg_js = json.dumps(msg,indent=4)
