@@ -28,7 +28,12 @@ u'{\n    "msg": "del portforward rule success", \n    "code": 200\n}'
 ```
 ![image](http://123.206.71.64/api_conffile2.png)
 
+#### warn
+this is a demo http service, think twice before applying in production environment
 
+please considerate more about data storage using DB instead
+
+and data consistency , recovery just as Neutron did
 
 ---
 
