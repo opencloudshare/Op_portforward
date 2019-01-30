@@ -6,7 +6,7 @@
       shellScript: |-
         mkdir -p /github.com/opencloudshare/
         ln -s `pwd` /github.com/opencloudshare/Op_portforward
-        pip install tornado json re time commands ConfigParser
+        pip install tornado ConfigParser
         cd /github.com/opencloudshare/Op_portforward
         ls
 timeout: 60
