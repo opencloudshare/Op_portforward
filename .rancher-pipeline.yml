@@ -15,5 +15,5 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
-      tag: sddc/testservice:${CICD_EXECUTION_SEQUENCE}
+      tag: sddc/testservice:${DATE}
 
