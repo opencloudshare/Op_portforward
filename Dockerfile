@@ -1,4 +1,4 @@
-FROM 172.30.13.91/sddc/centos:7
+FROM registry.cn-hangzhou.aliyuncs.com/sddc/centos:7
 EXPOSE 39696
 RUN yum install -y epel-release
 RUN yum install -y python-pip
