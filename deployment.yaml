@@ -10,7 +10,7 @@ spec:
     - protocol: TCP
       port: 39696
       targetPort: 39696
-      nodePort: 39696
+      nodePort: 32766
 ---
 apiVersion: apps/v1
 kind: Deployment
