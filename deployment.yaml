@@ -15,7 +15,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: opforwardapi
+  name: opforwardapi-deploy
   labels:
     app: opforwardapi
 spec:
@@ -34,4 +34,4 @@ spec:
       - name: opforwardapi
         image: ${CICD_IMAGE}:${CICD_GIT_COMMIT}
         ports:
-- containerPort: 39696
+        - containerPort: 39696
