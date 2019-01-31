@@ -1,4 +1,4 @@
-﻿stages:
+stages:
 - name: test
   steps:
   - runScriptConfig:
@@ -10,10 +10,11 @@
         cd /github.com/opencloudshare/Op_portforward
         ls
         echo "test done"
-- name: Publish 
+- name: Publish
   steps:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
-      tag: 172.30.13.91/sddc/testservice:${CICD_EXECUTION_SEQUENCE}
-      
+      tag: sddc/testservice:${CICD_EXECUTION_SEQUENCE}
+      pushRemote: true
+      registry: 172.30.13.91
