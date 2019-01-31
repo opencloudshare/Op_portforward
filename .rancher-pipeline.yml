@@ -17,4 +17,4 @@ stages:
       buildContext: .
       tag: sddc/testservice:${CICD_EXECUTION_SEQUENCE}
       pushRemote: true
-      registry: 172.30.13.91
+      registry: registry.cn-hangzhou.aliyuncs.com
