@@ -9,4 +9,10 @@
         pip install tornado ConfigParser
         cd /github.com/opencloudshare/Op_portforward
         ls
-timeout: 60
+- name: Publish 
+  steps:
+  - publishImageConfig:
+      dockerfilePath: ./Dockerfile
+      buildContext: .
+      tag: 172.30.13.91/sddc/testservice:${CICD_EXECUTION_SEQUENCE}
+      
