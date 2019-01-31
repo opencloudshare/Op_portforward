@@ -15,5 +15,8 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
-      tag: sddc/testservice:${DATE}
-
+      tag: sddc/testservice:${CICD_GIT_COMMIT}
+- name: Deploy
+  steps:
+  - applyYamlConfig:
+      path: ./deployment.yaml

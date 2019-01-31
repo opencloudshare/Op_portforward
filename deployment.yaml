@@ -1,0 +1,37 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: opforwardapi-service
+spec:
+  selector:
+    app: opforwardapi
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 39696
+      targetPort: 39696
+      nodePort: 39696
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: opforwardapi
+  labels:
+    app: opforwardapi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: opforwardapi
+  template:
+    metadata:
+      labels:
+        app: opforwardapi
+    spec:
+      imagePullSecrets:
+      - name: pipeline-docker-registry
+      containers:
+      - name: opforwardapi
+        image: ${CICD_IMAGE}:${CICD_GIT_COMMIT}
+        ports:
+- containerPort: 39696
