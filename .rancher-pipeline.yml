@@ -16,5 +16,4 @@ stages:
       dockerfilePath: ./Dockerfile
       buildContext: .
       tag: sddc/testservice:${CICD_EXECUTION_SEQUENCE}
-      pushRemote: true
-      registry: registry.cn-hangzhou.aliyuncs.com
+
